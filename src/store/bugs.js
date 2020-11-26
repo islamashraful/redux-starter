@@ -1,6 +1,31 @@
-import { BUG_ADDED, BUG_REMOVED, BUG_RESOLVED } from "./actionTypes";
-import store from "./store";
+// Action types
+const BUG_ADDED = "bugAdded";
+const BUG_REMOVED = "bugRemoved";
+const BUG_RESOLVED = "bugResolved";
 
+// Action creators
+export const bugAdded = (description) => ({
+  type: BUG_ADDED,
+  payload: {
+    description,
+  },
+});
+
+export const bugRemoved = (id) => ({
+  type: BUG_REMOVED,
+  payload: {
+    id: 1,
+  },
+});
+
+export const bugResolved = (id) => ({
+  type: BUG_RESOLVED,
+  payload: {
+    id: 1,
+  },
+});
+
+// Reducer
 let lastId = 0;
 
 export default function reducer(state = [], action) {
